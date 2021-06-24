@@ -1,0 +1,696 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: Arial Nova, sans-serif;
+  font-size: 16pt;
+  background-color: #fff;
+}
+
+/* Style the header */
+header {
+  background-image: linear-gradient(to right, #840038, #385723);
+  padding: 30px;
+  display: flex;
+  /*position: -webkit-sticky;
+  position: sticky;*/
+  top: 0;
+  color: white;
+}
+.logos img {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+.banner_lines {
+    flex-grow: 5;
+}
+.banner_lines h3, h4, h6{
+    color: #fff;
+    margin-left: 1%;
+    text-transform: uppercase;
+}
+.log_out img {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity:.7;
+    vertical-align: middle;
+}
+.log_out img:hover {
+    opacity:1.0;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 20%;
+  height: 1000px;
+  background: #f1f1f1;
+
+  padding-top: 20px;
+  overflow-x: hidden;
+}
+.sidebar a, .drop-bttn {
+    padding: 6px 8px 6px 16px;
+    color: green;
+    text-decoration: none;
+    display: block;
+    font-size: 16pt;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+.sidebar .active {
+  background-color: #840038;
+  color: white;
+}
+.sidebar a:hover:not(.active), .drop-bttn:hover {
+  background-color: #0e6022;
+  color: white;
+}
+.dropdown-menu {
+  display: none;
+  background: #f1f1f1;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* content index.php */
+.content-users {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-users {
+  color: #606060;
+  text-transform: uppercase;
+  /*padding: 2%;*/
+}
+#subtitle-users {
+  color: #606060;
+  text-transform: uppercase;
+}
+#table-users {
+  text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+  overflow-wrap: all;
+}
+.delete:link, .delete:visited {
+  font-weight:bold;
+  color: darkgray;
+  text-align: right;
+  text-decoration: none;
+  font-size: larger;
+}
+.delete:hover {
+  color:#840038;
+}
+.user-row:hover {
+  background-color: lightgoldenrodyellow;
+}
+#note-pass {
+  font-size: 16pt;
+  margin-bottom: 15px;
+  color: red;
+}
+#table-requests {
+  text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+  overflow-wrap: all;
+}
+.send-email:link, .send-email:visited {
+  font-weight:bold;
+  border-radius: 100px 100px 100px 100px;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: small;
+}
+.send-email:hover {
+  background-color:#840038;
+}
+div.content { /*for jquery data table*/
+  width: 70%;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{ /*for jquery data table buttons*/
+  box-sizing:border-box;
+  display:inline-block;
+  min-width:1.5em;
+  padding:.5em 1em;
+  margin-left:2px;
+  text-align:center;
+  text-decoration:none !important;
+  cursor:pointer;
+  *cursor:hand;
+  color:#333 !important;
+  border:1px solid transparent;
+  border-radius:2px
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button:hover{/*for jquery data table buttons hover*/
+  color:#333 !important;
+  border:1px solid #979797;
+  background-color:##ffad0d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffad0d), color-stop(100%, #ffad0d));
+  background:-webkit-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-moz-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-ms-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-o-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:linear-gradient(to bottom, #ffad0d 40%, #ffad0d 100%);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{/*for jquery data table current button hover*/
+  color:#333 !important;
+  border:1px solid #979797;
+  background-color:##ffad0d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffad0d), color-stop(100%, #ffad0d));
+  background:-webkit-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-moz-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-ms-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-o-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:linear-gradient(to bottom, #ffad0d 40%, #ffad0d 100%);
+}
+
+/* all table headers */
+th {
+  border-bottom:1px solid black;
+  padding-bottom:3px;
+}
+
+/* content in user_reg.php */
+.content-reg-users {
+  float: left;
+  /*margin-left:25rem;*/
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+form { /* user reg form */
+  margin:2rem;
+}
+select { /* for roles */
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 5px 5px 5px 5px;
+}
+input[type=email]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=text]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+  width:130px;
+  height:50px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+}
+input[type=submit]:hover{
+  background-color:#840038;
+}
+.rand-pass{
+  width:180px;
+  height:40px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  margin-left:1rem;
+}
+.rand-pass:hover{
+  background-color:#840038;
+}
+
+/* content emp_raw.php and alum_raw.php */
+.content-emp-raw, .content-alum-raw {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-raw, #title-alum-raw {
+  color: #606060;
+  text-transform: uppercase;
+}
+#subtitle-emp-raw, #subtitle-alum-raw {
+  color: #606060;
+  text-transform: uppercase;
+}
+.ques_title {
+  padding: 20px;
+  padding-bottom: 15px;
+  text-align: center;
+  color: #606060;
+}
+.table-emp-raw {
+  text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+  overflow-wrap: all;
+}
+.table-emp-raw thead{
+  color:#ffad0d;
+}
+.table-emp-raw td{
+  /*width:20%;*/
+}
+.survey-id {
+  width:5%
+}
+
+/* TABS FOR ALUM AND EMP RAW */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button, .tab p {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+
+/* content alum_charts.php and emp_charts.php */
+.content-emp-charts, .content-alum-charts {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-charts, #title-alum-charts{
+  color: #606060;
+  text-transform: uppercase;
+}
+#note-charts {
+  color: #606060;
+  text-transform: uppercase;
+}
+#subtitle-emp-charts, #subtitle-alum-charts{
+  color: #606060;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px;
+}
+/* Style the tab content */
+.chart-tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.export-pdf:link, .export-pdf:visited {
+  font-weight:bold;
+  border-radius: 100px 100px 100px 100px;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.export-pdf:hover {
+  background-color:#840038;
+}
+.export-btn {
+  overflow: hidden;
+}
+canvas {
+  min-height: 40vh;
+  width: auto;
+}
+#alum_canvas18, #alum_canvas5a-1, #mycanvas3, #mycanvas7, #mycanvas8, #mycanvas11, #mycanvas12 {
+  max-height: 40vh;
+  width: auto;
+}
+.chart-legend {
+  font-size: 10pt;
+  padding-left: 5px;
+}
+
+
+/* content alum_tables.php and emp_tables.php */
+.content-emp-table, .content-alum-table {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-table, #title-alum-table {
+  color: #606060;
+  text-transform: uppercase;
+}
+#subtitle-emp-table, #subtitle-alum-table{
+  color: #606060;
+  text-transform: uppercase;
+}
+#table-emp-table1 {
+  text-align: center;
+  width:100%;
+}
+#table-emp-table1 thead{
+  color:#ffad0d;
+}
+#total-respondents {
+  color: black;
+  text-transform: uppercase;
+}
+#table-alum-table1 {
+  text-align: center;
+  width:100%;
+}
+#table-alum-table1 thead{
+  color:#ffad0d;
+}
+.export-excel:link, .export-excel:visited {
+  font-weight:bold;
+  border-radius: 100px 100px 100px 100px;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.export-excel:hover {
+  background-color:#840038;
+}
+
+
+
+/* content contact_emp.php */
+.content-contact {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#contact-emp-form {
+  margin-top: 0;
+}
+#title-contact {
+  color: #606060;
+  text-transform: uppercase;
+}
+#table-contact {
+  text-align: center;
+  width: 100%;
+}
+.contact-row:hover {
+  background-color: lightgoldenrodyellow;
+}
+.update-btn {
+  padding-bottom: 20px;
+}
+
+/* for bigger checkboxes */
+.check-option {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  /*margin-bottom: 12px;*/
+  margin-top: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 12pt;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.check-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 13pt;
+  width: 13pt;
+  background-color: white;
+  border: 1px solid #404040;
+}
+.check-option:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.check-option input:checked ~ .checkmark {
+  background-color: #ffad0d;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check-option input:checked ~ .checkmark:after {
+  display: block;
+}
+/* for check design inside box */
+.check-option .checkmark:after {
+  left: 4px;
+  top: 3px;
+  width: 4px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* for alert message */
+.alert-fail {
+    background-color:#FFD2D2;
+    color: #D8000C;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 15%;
+  }
+  .alert-success {
+    background-color:#DFF2BF;
+    color: #4F8A10;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 15%;
+  }
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .modal {
+	display:none;
+	position:fixed;
+	z-index:1;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color: rgba(0,0,0,0.5);
+  }
+  .modal-content {
+	background-color: #fefefe;
+    margin: 10% auto;
+	padding: 2rem 2.5rem;
+	border-radius: 0.5rem;
+	width: 70%;
+	box-shadow:0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  }
+  .modal-content p {
+	  font-size:14pt;
+  }
+  .modal-header {
+	  font-size:18pt;
+	  color:#840038;
+	  padding-bottom:1rem;
+  }
+  .modal-footer {
+	  margin-top:1rem;
+	  margin-bottom:6rem;
+  }
+  .logout-modal a{
+	  width:9rem;
+	  height:3rem;
+	  font-weight:bold;
+	  color:#ffffff;
+	  border-radius: 100px;
+	  border:0;
+	  background-color:#ffad0d;
+	  float:right;
+	  text-transform: uppercase;
+	  transition:0.3s ease;
+	  cursor:pointer;
+	  text-decoration:none;
+	  font-size:12pt;
+	  padding: 1rem;
+	  text-align:center;
+  }
+  .logout-modal a:hover{
+	  background-color:#840038;
+  }
+
+
+.log-out-prompt input[type=button] {
+	width:9rem;
+	  height:3rem;
+	  font-weight:bold;
+	  color:#ffffff;
+	  border-radius: 100px;
+	  border:0;
+	  background-color:#ffad0d;
+	  float:right;
+	  text-transform: uppercase;
+	  transition:0.3s ease;
+	  cursor:pointer;
+	  text-decoration:none;
+	  font-size:12pt;
+	  padding: 1rem;
+	  text-align:center;
+}
+
+/* Style the footer */
+footer {
+  background-color:#0e6022;
+  left:0;
+  bottom:0;
+  padding-left: 1.25rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size:12pt;
+  color: white;
+  display: flex;
+}
+.info {
+    flex-grow: 10;
+}
+.copyright {
+  text-align:center;
+  right:0;
+  font-size: 9pt;
+  margin-right:1rem;
+}
+.copyright a {
+  color:#ffffff;
+  text-decoration: none;
+  text-transform:uppercase;
+  transition:0.3s ease; 
+}
+.copyright a:hover {
+  color:#ffad0d;
+}
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts, .content-alum-charts, .content-emp-table, .content-alum-table, .content-contact {
+    width: 100%;
+    /*height: auto;*/
+  }
+}
